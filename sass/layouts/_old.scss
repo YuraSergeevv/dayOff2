@@ -762,22 +762,37 @@ h1 {
 
 .element-1 {
   background-image: url("../images/heder/icon/glass.png");
+  &.line{
+    background-image: url("../images/heder/icon/glass-yellow.png");
+  }
 }
 
 .element-2 {
   background-image: url("../images/heder/icon/search.png");
+  &.line{
+    background-image: url("../images/heder/icon/search-yellow.png");
+  }
 }
 
 .element-3 {
    background-image: url("../images/heder/icon/contact.png");
+  &.line{
+    background-image: url("../images/heder/icon/contact-yellow.png");
+  }
 }
 
 .element-4 {
    background-image: url("../images/heder/icon/like.png");
+  &.line{
+    background-image: url("../images/heder/icon/like-yellow.png");
+  }
 }
 
 .element-5 {
    background-image: url("../images/heder/icon/basket.png");
+  &.line{
+    background-image: url("../images/heder/icon/basket-yellow.png");
+  }
 }
 
 .mass_icon::before {
@@ -1839,6 +1854,23 @@ h1 {
 
 .new-slider__inner {
   position: relative;
+  @include  breakpoint(sm-down){
+    .slick-prev {
+      left: calc(50% - 10px);
+      top: 0;
+      background-image: url("../images/slider/arrow.svg");
+      transform: rotate(-90deg) ;
+    }
+
+    .slick-next {
+      background-image: url("../images/slider/arrow.svg");
+      left: calc(50% - 10px);
+      top: initial;
+      bottom: 0;
+      transform: rotate(90deg);
+    }
+
+  }
 }
 
 .new-slider__prev-arrow, .new-slider__next-arrow {
@@ -1915,6 +1947,9 @@ h1 {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: contain;
+  &.like__yellow{
+    background-image: url("../images/card/icon/like-yellow_full.png");
+  }
 }
 
 .new-card__subtitle {
@@ -2198,6 +2233,9 @@ h1 {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: contain;
+  &.like__black{
+    background-image: url("../images/card/icon/like-black_full.png");
+  }
 }
 
 .top-card__subtitle {
@@ -2732,11 +2770,6 @@ h1 {
   right: 20px;
 }
 
-.slick-track {
-  display: flex;
-  justify-content: center;
-}
-
 .top-slider__item {
   height: auto;
 }
@@ -2938,8 +2971,7 @@ input[type=number] {
 }
 
 .new-slider__item {
-  height: auto;
-  max-height: 275px;
+
 }
 
 .new-card__subtitle {

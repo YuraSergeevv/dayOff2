@@ -23,6 +23,16 @@ $(document).ready(function () {
         $('.description').slideToggle();
         return false;
     })
+    $('.new-card__icon').on('click touchend', function () {
+        $(this).toggleClass('like__yellow')
+        $('.description').slideToggle();
+        return false;
+    })
+    $('.top-card__icon').on('click touchend', function () {
+        $(this).toggleClass('like__black')
+        $('.description').slideToggle();
+        return false;
+    })
 
 
     let select = function () {
@@ -81,9 +91,8 @@ $(document).ready(function () {
                 {
                     breakpoint: 1025,
                     settings: {
+                        slidesToShow: 2,
                         vertical: true,
-                        verticalSwiping: true,
-                        slidesToShow: 1,
                     }
                 }
             ]
