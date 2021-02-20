@@ -1,0 +1,5 @@
+@import "mixins/fontface";
+
+@include fontface(ProximaNova, 400, Regular, n);
+@include fontface(ProximaNova, 300, Thin, n);
+@include fontface(ProximaNova, 600, SemiBold, n);
