@@ -207,5 +207,20 @@ $(document).ready(function () {
         }
     });
 
+    $('.prop-title').on('click touchend', function () {
+        $(this).parent().toggleClass('active');
+        $(this).next().slideToggle();
+        return false;
+    })
+
+    $('.validation-field input[type="text"],.validation-field input[type="number"],.validation-field textarea').on("blur", function () {
+        $(this).val() ? $(this).parent().addClass('active') : $(this).parent().removeClass('active');
+    }).each(function () {
+        $(this).val() ? $(this).parent().addClass('active') : $(this).parent().removeClass('active');
+        if($(this).attr("placeholder") && $(this).attr("placeholder").indexOf('*') != -1){
+            var placeholder = $(this).attr("placeholder");
+            $(this).next(".placeholder").text(placeholder);
+        }
+    });
 });
 $('.top__input-phone').mask('(000)000-00-00');  
