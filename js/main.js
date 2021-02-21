@@ -202,9 +202,14 @@ $(document).ready(function () {
                     settings: {
                         slidesToShow: 4,
                     }
-
-                }]
-
+                },
+                {
+                    breakpoint: 421,
+                    settings: {
+                        slidesToShow: 1,
+                    }
+                }
+                ]
         })
     });
 

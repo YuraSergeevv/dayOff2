@@ -2735,7 +2735,7 @@ h1 {
 .drop {
   font-family: MyriadSetPro;
   position: absolute;
-  transform: translateY(-100%);
+  transform: translateY(-110%);
   left: 0;
   z-index: 4;
   width: 100%;
@@ -3019,11 +3019,20 @@ h1 {
     display: none;
   }
 }
+@media (max-width: 450px) {
+  .drinks-slider__inner {
+    display: block;
+  }
+}
 
 .drinks__element {
   display: flex;
   flex-direction: column;
-  max-width: 165px;
+}
+@media (max-width: 450px) {
+  .drinks__element {
+    max-height: initial;
+  }
 }
 
 .drinks__element img {
@@ -3057,6 +3066,11 @@ h1 {
 @media (max-width: 500px) {
   .drinks-slider__inner-MB {
     display: block;
+  }
+}
+@media (max-width: 450px) {
+  .drinks-slider__inner-MB {
+    display: none;
   }
 }
 .drinks-slider__inner-MB .slick-prev {
@@ -3659,11 +3673,17 @@ h1 {
 }
 
 .basket__title {
+  cursor: pointer;
   margin-left: 20px;
   font-size: 21px;
   font-weight: 700;
   text-transform: uppercase;
   color: #ffffff;
+  transition: 0.4s;
+}
+.basket__title:hover {
+  transition: 0.4s;
+  color: #ffce00;
 }
 @media (max-width: 767px) {
   .basket__title {
@@ -3711,6 +3731,7 @@ h1 {
 }
 
 .basket__delet {
+  cursor: pointer;
   margin-left: 25px;
   width: 23px;
   height: 23px;
@@ -4235,12 +4256,13 @@ h1 {
   font-size: 14px;
   line-height: 1.2;
   font-weight: 700;
-  color: #181818;
   background-color: #ffffff;
+  color: #181818;
   display: flex;
   align-items: center;
   justify-content: center;
   flex: 1 1 auto;
+  cursor: pointer;
 }
 @media (max-width: 500px) {
   .slider__item-sale-buy {
@@ -4322,6 +4344,16 @@ h1 {
   height: 265px;
   margin: 15px;
 }
+@media (max-width: 1024px) {
+  .new-slider__item {
+    margin: 0;
+  }
+}
+@media (hover: none) and (pointer: coarse) {
+  .new-slider__item {
+    margin: 0;
+  }
+}
 
 .new-slider__inner {
   position: relative;
@@ -4391,7 +4423,6 @@ h1 {
 }
 
 .new-card__img {
-  margin-top: -40px;
   width: 50%;
 }
 @media (max-width: 1199px) {
@@ -4401,8 +4432,8 @@ h1 {
 }
 
 .new-card__img img {
-  width: 242px;
-  height: 342px;
+  margin: 0 auto;
+  height: 100%;
   object-fit: contain;
 }
 @media (max-width: 1199px) {
@@ -4688,7 +4719,6 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 150px;
 }
 @media (max-width: 767px) {
   .baner__inner {
@@ -5157,11 +5187,13 @@ h1 {
 }
 
 .subscribe__btn:hover {
-  color: #ffffff;
   transition: 0.4s;
+  background-color: #181818;
+  color: #ffffff;
 }
 
 .subscribe__btn:hover span::after {
+  background-image: url("../images/arrow-yellow.png");
   right: -60%;
   transition: 0.4s;
 }
@@ -5470,8 +5502,8 @@ h1 {
 }
 
 .top__end-text:hover {
-  border-color: #fff;
-  color: #fff;
+  background-color: #ffffff;
+  color: #181818;
 }
 
 .new__end-text:after {
@@ -5480,15 +5512,17 @@ h1 {
 
 .new__end-text:hover {
   border-color: #ffd800;
-  color: #ffd800;
+  color: #ffffff;
+  background: #181818;
 }
 
 .new__end-text:hover:after {
-  right: 20px;
+  background-image: url("../images/arrow-white.png");
+  right: 30px;
 }
 
 .top__end-text:hover:after {
-  right: 20px;
+  right: 30px;
 }
 
 .top-slider__item {

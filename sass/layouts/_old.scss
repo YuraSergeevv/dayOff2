@@ -677,7 +677,7 @@ h1 {
 .drop {
   font-family: MyriadSetPro;
   position: absolute;
-  transform: translateY(-100%);
+  transform: translateY(-110%);
   left: 0;
   z-index: 4;
   width: 100%;
@@ -929,11 +929,16 @@ h1 {
   }
   @include breakpoint(smxs){
       display: none }
+  @include breakpoint(sxs){
+    display: block;
+  }
 }
 .drinks__element {
   display: flex;
   flex-direction: column;
-  max-width: 165px;
+  @include breakpoint(sxs){
+    max-height: initial;
+  }
 }
 .drinks__element img {
   display: block;
@@ -960,6 +965,9 @@ h1 {
   margin: 0 20px;
   @include breakpoint(smxs){
     display: block;
+  }
+  @include breakpoint(sxs){
+   display: none;
   }
   .drinks-slider__item{
   }
@@ -1447,11 +1455,17 @@ h1 {
 
 
 .basket__title {
+  cursor: pointer;
   margin-left: 20px;
   font-size: 21px;
   font-weight: 700;
   text-transform: uppercase;
   color: #ffffff;
+  transition: 0.4s;
+  &:hover{
+    transition: 0.4s;
+    color: #ffce00;
+  }
   @include  breakpoint(xs){
     font-size: 16px;
   }
@@ -1487,6 +1501,7 @@ h1 {
 }
 
 .basket__delet {
+  cursor: pointer;
   margin-left: 25px;
   width: 23px;
   height: 23px;
@@ -1874,12 +1889,13 @@ h1 {
   font-size: 14px;
   line-height: 1.2;
   font-weight: 700;
-  color: #181818;
   background-color: #ffffff;
+  color: #181818;
   display: flex;
   align-items: center;
   justify-content: center;
   flex: 1 1 auto;
+  cursor: pointer;
   @include breakpoint(smxs){
     justify-content: flex-start;
     padding-left: 10px;
@@ -1949,6 +1965,9 @@ h1 {
   width: 555px;
   height: 265px;
   margin: 15px;
+  @include breakpoint(sm-down){
+    margin: 0;
+  }
 }
 
 .new-slider__inner {
@@ -1998,15 +2017,15 @@ h1 {
 }
 
 .new-card__img {
-  margin-top: -40px;
   width: 50%;
+
   @include breakpoint(md-down){
    margin: 0;
   }
 }
 .new-card__img img {
-  width: 242px;
-  height: 342px;
+  margin: 0 auto;
+  height: 100%;
   object-fit: contain;
   @include breakpoint(md-down){
     width: 192px;
@@ -2249,7 +2268,6 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 150px;
   @include breakpoint(xs) {
    flex-wrap: wrap;
     padding: 50px 0 30px;
@@ -2650,9 +2668,11 @@ h1 {
   padding: 18px 0;
   background-color: #ffed00;
   transition: 0.4s;
+
 }
 .subscribe__btn span {
   position: relative;
+
 }
 .subscribe__btn span::after {
   transition: 0.4s;
@@ -2667,13 +2687,17 @@ h1 {
   top: calc( 50% - 4px);
   right: -37px;
 }
-.subscribe__btn:hover {
+.subscribe__btn:hover{
+  transition: 0.4s;
+  background-color: #181818;
   color: #ffffff;
-  transition: 0.4s;
 }
-.subscribe__btn:hover span::after {
-  right: -60%;
-  transition: 0.4s;
+.subscribe__btn:hover span{
+  &::after {
+    background-image: url("../images/arrow-yellow.png");
+    right: -60%;
+    transition: 0.4s;
+  }
 }
 /////////////////////////Footer//////////////////
 .footer {
@@ -2917,8 +2941,8 @@ h1 {
 }
 
 .top__end-text:hover {
-  border-color: #fff;
-  color: #fff;
+  background-color: #ffffff;
+  color: #181818;
 }
 
 .new__end-text:after {
@@ -2927,15 +2951,17 @@ h1 {
 
 .new__end-text:hover {
   border-color: #ffd800;
-  color: #ffd800;
+  color: #ffffff;
+  background: #181818;
 }
 
 .new__end-text:hover:after {
-  right: 20px;
+  background-image: url("../images/arrow-white.png");
+  right: 30px;
 }
 
 .top__end-text:hover:after {
-  right: 20px;
+  right: 30px;
 }
 
 .top-slider__item {
