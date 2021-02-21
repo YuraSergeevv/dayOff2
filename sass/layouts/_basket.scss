@@ -1,0 +1,237 @@
+.basket-body{
+  font-family: MyriadSetPro;
+  padding-top: 60px;
+  padding-bottom: 50px;
+  h1{
+    color:#181818;
+    font-size: 31px;
+    font-weight: normal;
+  }
+}
+
+.basket-list{
+  .heading{
+    @include flexbox;
+    @include align-items(center);
+    padding-bottom: 25px;
+    padding-left: 40px;
+    padding-right: 30px;
+    @include breakpoint(sm-down){
+      display: none;
+    }
+    .name{
+      font-size: 14px;
+      text-transform: uppercase;
+      &:first-of-type{
+        width: 40%;
+      }
+      &:nth-of-type(2){
+        width: 15%;
+      }
+      &:nth-of-type(3){
+        width: 15%;
+      }
+      &:nth-of-type(4){
+        width: 30%;
+      }
+    }
+  }
+  .item{
+    background-color: #181818;
+    @include flexbox;
+    @include align-items(center);
+    padding: 15px;
+    margin-bottom: 10px;
+    @include breakpoint(xs){
+      position: relative;
+      @include flex-direction(column);
+    }
+    &:last-of-type{
+      margin-bottom: 0;
+    }
+  }
+  .basket-item-image{
+    max-height: 100px;
+    max-width: 100px;
+    height: 100px;
+    width: 100px;
+    overflow: hidden;
+    position: relative;
+    @include breakpoint(xs){
+      margin-bottom: 10px;
+    }
+    img{
+      object-fit: contain;
+    }
+  }
+  .type{
+    font-size: 14px;
+    color: #6a6d6d;
+    margin-right: 10px;
+    padding-left: 10px;
+@include breakpoint(xs){
+  margin-right: 0;
+  margin-bottom: 10px;
+  padding-left: 0;
+}
+  }
+  .title{
+    color: #ffffff;
+    @include breakpoint(xs){
+      text-align: center;
+    }
+  }
+  .info{
+    @include flexbox;
+    width: calc(41% - 100px);
+    padding-right: 10px;
+    @include breakpoint(xs){
+      padding-right: 0;
+      width: 100%;
+      @include flex-direction(column);
+      @include align-items(center);
+      max-width: 200px;
+      margin: auto;
+      margin-bottom: 10px;
+    }
+
+  }
+  .count{
+    @include flexbox;
+    @include align-items(center);
+    width: 14%;
+    @include breakpoint(xs){
+      width: 200px;
+      @include justify-content(center);
+      margin-bottom: 10px;
+    }
+    input{
+      border: none;
+      background-color: transparent;
+      width: 40px;
+      height: 40px;
+      text-align: center;
+      color: #ffffff;
+      font-size: 21px;
+      padding: 5px;
+    }
+    .minus,.plus{
+      text-align: center;
+      font-size: 21px;
+      color: #ffd800;
+      width: 40px;
+      user-select: none;
+      cursor: pointer;
+    }
+  }
+  .price,.total{
+    font-size: 21px;
+    color: #ffd800;
+    @include flexbox;
+    span{
+      margin-left: 4px;
+      color: #5f5f5f;
+      font-size: 16px;
+    }
+  }
+  .price{
+    width: 14%;
+    @include breakpoint(xs){
+      width: 100%;
+      @include flexbox;
+      @include justify-content(center);
+    }
+  }
+  .remove{
+    cursor: pointer;
+    margin-left: auto;
+    @include breakpoint(xs){
+      position: absolute;
+      right: 10px;
+      top: 10px;
+    }
+    svg{
+      width: 15px;
+      height: 14px;
+    }
+  }
+}
+
+.total-line{
+  padding-top: 40px;
+  @include flexbox;
+  @include align-items(center);
+  @include breakpoint(xs){
+    margin-bottom: 20px;
+    @include justify-content(center);
+  }
+  margin-bottom: 75px;
+  .total-title{
+    margin-left: 69%;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-right: 30px;
+
+    @include breakpoint(xs){
+      margin-left: initial;
+    }
+  }
+  .basket-total{
+    font-weight: 600;
+    font-size: 21px;
+    @include flexbox;
+    span{
+      margin-left: 4px;
+      font-weight: normal;
+      font-size: 16px;
+    }
+  }
+}
+
+.total-buttons{
+  @include flexbox;
+  @include justify-content(flex-end);
+  @include align-items(center);
+  @include breakpoint(xs){
+    @include flex-wrap(wrap);
+    @include justify-content(center);
+  }
+  a{
+    width: 260px;
+    height: 55px;
+    font-size: 14px;
+    @include flexbox;
+    @include align-items(center);
+    @include justify-content(center);
+    @include breakpoint(xs){
+      width: 50%;
+    }
+    @include breakpoint(smxs){
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.order-button{
+  background-color: #181818;
+  color: #ffce00;
+}
+
+.back-button{
+  border: 1px solid #181818;
+  position: relative;
+  color: #181818;
+  font-weight: 600;
+  &:after{
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 44%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 5px 5px 0;
+    border-color: transparent #181818 transparent transparent;
+  }
+}

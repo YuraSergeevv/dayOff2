@@ -28,6 +28,7 @@ body{padding: 0;}
 //components
 //@import "components/to-top";
 @import "components/pagination";
+@import "components/object-fit";
 
 //widgets
 //@import "widgets/pagination";
@@ -37,6 +38,7 @@ body{padding: 0;}
 //layouts
 //@import "layouts/header";
 @import "layouts/old";
+@import "layouts/basket";
 @import "layouts/catalog-page";
 @import "layouts/new-catalog-slider";
 //@import "layouts/footer";

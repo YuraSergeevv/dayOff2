@@ -44,33 +44,36 @@ $(document).ready(function () {
     var min = $(this).find('[name^=min]');
     var max = $(this).find('[name^=max]');
 
-    noUiSlider.create(slider, {
-        start: [100, 2500],
-        connect: !0,
-        range: {
-            'min': 100,
-            'max': 2500
-        }
-    });
+    if(slider){
+        noUiSlider.create(slider, {
+            start: [100, 2500],
+            connect: !0,
+            range: {
+                'min': 100,
+                'max': 2500
+            }
+        });
 
-    slider.noUiSlider.on('update', function (values, handle) {
-        var value = values[handle];
-        if (handle) {
-            $(max).val(parseInt(value));
-        } else {
-            $(min).val(parseInt(value));
-        }
-    });
+        slider.noUiSlider.on('update', function (values, handle) {
+            var value = values[handle];
+            if (handle) {
+                $(max).val(parseInt(value));
+            } else {
+                $(min).val(parseInt(value));
+            }
+        });
 
-    slider.noUiSlider.on('change', function (values, handle) {
-        $(min).change();
-    });
-    $(min).on('change', function () {
-        slider.noUiSlider.set([this.value, null])
-    });
-    $(max).on('change', function () {
-        slider.noUiSlider.set([null, this.value])
-    });
+        slider.noUiSlider.on('change', function (values, handle) {
+            $(min).change();
+        });
+        $(min).on('change', function () {
+            slider.noUiSlider.set([this.value, null])
+        });
+        $(max).on('change', function () {
+            slider.noUiSlider.set([null, this.value])
+        });
+
+    }
 
     $('.more').on('click touchend', function () {
         $(this).toggleClass('active')
@@ -85,6 +88,10 @@ $(document).ready(function () {
     $('.top-card__icon').on('click touchend', function () {
         $(this).toggleClass('like__black')
         $('.description').slideToggle();
+        return false;
+    })
+    $('.basket-list .remove').on('click touchend', function () {
+        $(this).parent().remove();
         return false;
     })
 
