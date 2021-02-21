@@ -210,6 +210,7 @@
 
   @include breakpoint(xs){
     width: 100%;
+    padding-left: 0;
   }
 }
 .row-item .right-item {
@@ -256,6 +257,8 @@
 }
 .row-item .prop-list {
   font-weight: 600;
+  display: block;
+  padding:0 ;
 }
 .row-item .prop-list .line {
   display: -webkit-box;
@@ -379,9 +382,15 @@ h1 {
   -ms-justify-content: center;
   justify-content: center;
   -ms-flex-pack: center;
+  @include breakpoint(sxs){
+   max-height: 350px;
+  }
 }
 .item-image img {
   max-height: 100%;
+  @include breakpoint(sxs){
+    max-height: 350px;
+  }
 }
 
 .item-page {
@@ -668,7 +677,7 @@ h1 {
 .drop {
   font-family: MyriadSetPro;
   position: absolute;
-  top: -200%;
+  transform: translateY(-100%);
   left: 0;
   z-index: 4;
   width: 100%;
@@ -680,9 +689,8 @@ h1 {
     padding: 55px 0 35px;
   }
 }
-
 .on {
-  top: 0px;
+  transform: translateY(0%);
 }
 
 
@@ -1190,6 +1198,10 @@ h1 {
   }
 }
 .tel{
+  margin-left: 30px;
+  @include breakpoint(xs){
+    margin-left: 0;
+  }
   @include breakpoint(sxs) {
     display: block;
     margin-top: 10px;
@@ -1197,7 +1209,6 @@ h1 {
   }
 }
 .tel__block span {
-  margin-left: 50px;
   font-size: 21px;
   color: #6a6d6d;
   @include breakpoint(md-down)
@@ -2027,7 +2038,7 @@ h1 {
   img{
     object-fit: contain;
   }
- 
+
 }
 
 .new-card__icon {
@@ -2072,21 +2083,20 @@ h1 {
   color: #ffd800;
   margin-top: 20px;
   position: relative;
+  span {
+    position: absolute;
+    font-weight: 500;
+    color: #6a6d6d;
+    font-size: 15px;
+    top: 5px;
+    right: -20px;
+    text-transform: uppercase;
+    @include breakpoint(smxs){
+      font-size: 10px;
+      right: -15px;
+    }}
   @include breakpoint(smxs){
     font-size: 20px;
-  }
-}
-.new-card__price::after {
-  content: "ТГ";
-  position: absolute;
-  font-weight: 500;
-  color: #6a6d6d;
-  font-size: 15px;
-  top: 5px;
-  right: -20px;
-  @include breakpoint(smxs){
-    font-size: 10px;
-    right: -15px;
   }
 }
 
@@ -2371,13 +2381,14 @@ h1 {
 }
 
 .top-card__title {
+  display: block;
   font-size: 24px;
+  height: 54px;
   line-height: 1.2;
   font-weight: 700;
   text-transform: uppercase;
   color: #181818;
   margin-top: 10px;
-  min-height: 48px;
   overflow: hidden;
   @include breakpoint(md-down)
   {
@@ -2402,24 +2413,24 @@ h1 {
   color: #181818;
   position: relative;
   padding-right: 17px;
+  span{
+    position: absolute;
+    font-weight: 500;
+    color: #6a6d6d;
+    font-size: 15px;
+    top: 5px;
+    right: 0;
+    text-transform: uppercase;
+    @include breakpoint(sxs){
+      font-size: 11px;
+    }
+  }
   @include breakpoint(md-down)
   {
     font-size: 24px;
   }
   @include breakpoint(sxs){
     font-size: 15px;
-  }
-}
-.top-card__price::after {
-  content: "ТГ";
-  position: absolute;
-  font-weight: 500;
-  color: #6a6d6d;
-  font-size: 15px;
-  top: 5px;
-  right: 0;
-  @include breakpoint(sxs){
-    font-size: 11px;
   }
 }
 
@@ -2432,21 +2443,21 @@ h1 {
   position: relative;
   text-decoration: line-through;
   margin-right: 20px;
+  span {
+    position: absolute;
+    font-weight: 400;
+    color: #6a6d6d;
+    font-size: 10px;
+    top: 5px;
+    right: 0;
+    @include breakpoint(sxs) {
+      font-size: 9px;
+      top: 0;
+    }
+  }
   @include breakpoint(sxs){
     font-size: 14px;
     margin-right: 0;
-  }
-}
-.top-card__price-last::after {
-  content: "ТГ";
-  position: absolute;
-  font-weight: 400;
-  color: #6a6d6d;
-  font-size: 10px;
-  top: 5px;
-  right: 0;
-  @include breakpoint(sxs){
-    font-size: 9px;
   }
 }
 
@@ -2932,7 +2943,7 @@ h1 {
 
 .top-card {
   padding: 21px 20px;
-  height: 500px;
+
 }
 
 .top-card__counter-block {

@@ -17,16 +17,17 @@ $(document).ready(function () {
             }
         }
     })
-
-    $('.filter-column').PopupSlider({
-        effect: 'fade',
-        button: '.filter-show',
-        closeButton: '.filter-close',
-        container: 'body',
-        breakpoint: 1024,
-        onMenuOpen: false,
-        onMenuClose: false
-    });
+    if ($('.filter-column') != undefined) {
+        $('.filter-column').PopupSlider({
+            effect: 'fade',
+            button: '.filter-show',
+            closeButton: '.filter-close',
+            container: 'body',
+            breakpoint: 1024,
+            onMenuOpen: false,
+            onMenuClose: false
+        });
+    }
 
     $('.filter-select').select2({
         minimumResultsForSearch: -1
@@ -311,7 +312,26 @@ $(document).ready(function () {
             }
         }
     });
+    $(".count-block").each(function () {
+        let $quantityArrowMinus = $(this).find(".minus");
+        let $quantityArrowPlus = $(this).find(".plus");
+        let $quantityNum = $(this).find('.count')
 
+        $quantityArrowMinus.click(quantityMinus);
+        $quantityArrowPlus.click(quantityPlus);
+
+        function quantityMinus() {
+            if ($quantityNum.val() > 1) {
+                $quantityNum.val(+$quantityNum.val() - 1);
+            }
+        }
+
+        function quantityPlus() {
+            if ($quantityNum.val() < 30000) {
+                $quantityNum.val(+$quantityNum.val() + 1);
+            }
+        }
+    });
     $('.prop-title').on('click touchend', function () {
         $(this).parent().toggleClass('active');
         $(this).next().slideToggle();

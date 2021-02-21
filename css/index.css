@@ -2219,6 +2219,7 @@ body {
 @media (max-width: 767px) {
   .row-item .center-item {
     width: 100%;
+    padding-left: 0;
   }
 }
 
@@ -2282,6 +2283,8 @@ body {
 
 .row-item .prop-list {
   font-weight: 600;
+  display: block;
+  padding: 0;
 }
 
 .row-item .prop-list .line {
@@ -2417,9 +2420,19 @@ h1 {
   justify-content: center;
   -ms-flex-pack: center;
 }
+@media (max-width: 450px) {
+  .item-image {
+    max-height: 350px;
+  }
+}
 
 .item-image img {
   max-height: 100%;
+}
+@media (max-width: 450px) {
+  .item-image img {
+    max-height: 350px;
+  }
 }
 
 .item-page {
@@ -2722,7 +2735,7 @@ h1 {
 .drop {
   font-family: MyriadSetPro;
   position: absolute;
-  top: -200%;
+  transform: translateY(-100%);
   left: 0;
   z-index: 4;
   width: 100%;
@@ -2738,7 +2751,7 @@ h1 {
 }
 
 .on {
-  top: 0px;
+  transform: translateY(0%);
 }
 
 .container {
@@ -3331,6 +3344,14 @@ h1 {
   }
 }
 
+.tel {
+  margin-left: 30px;
+}
+@media (max-width: 767px) {
+  .tel {
+    margin-left: 0;
+  }
+}
 @media (max-width: 450px) {
   .tel {
     display: block;
@@ -3340,7 +3361,6 @@ h1 {
 }
 
 .tel__block span {
-  margin-left: 50px;
   font-size: 21px;
   color: #6a6d6d;
 }
@@ -4472,25 +4492,24 @@ h1 {
   margin-top: 20px;
   position: relative;
 }
-@media (max-width: 500px) {
-  .new-card__price {
-    font-size: 20px;
-  }
-}
-
-.new-card__price::after {
-  content: "ТГ";
+.new-card__price span {
   position: absolute;
   font-weight: 500;
   color: #6a6d6d;
   font-size: 15px;
   top: 5px;
   right: -20px;
+  text-transform: uppercase;
 }
 @media (max-width: 500px) {
-  .new-card__price::after {
+  .new-card__price span {
     font-size: 10px;
     right: -15px;
+  }
+}
+@media (max-width: 500px) {
+  .new-card__price {
+    font-size: 20px;
   }
 }
 
@@ -4808,13 +4827,14 @@ h1 {
 }
 
 .top-card__title {
+  display: block;
   font-size: 24px;
+  height: 54px;
   line-height: 1.2;
   font-weight: 700;
   text-transform: uppercase;
   color: #181818;
   margin-top: 10px;
-  min-height: 48px;
   overflow: hidden;
 }
 @media (max-width: 1199px) {
@@ -4842,6 +4862,20 @@ h1 {
   position: relative;
   padding-right: 17px;
 }
+.top-card__price span {
+  position: absolute;
+  font-weight: 500;
+  color: #6a6d6d;
+  font-size: 15px;
+  top: 5px;
+  right: 0;
+  text-transform: uppercase;
+}
+@media (max-width: 450px) {
+  .top-card__price span {
+    font-size: 11px;
+  }
+}
 @media (max-width: 1199px) {
   .top-card__price {
     font-size: 24px;
@@ -4850,21 +4884,6 @@ h1 {
 @media (max-width: 450px) {
   .top-card__price {
     font-size: 15px;
-  }
-}
-
-.top-card__price::after {
-  content: "ТГ";
-  position: absolute;
-  font-weight: 500;
-  color: #6a6d6d;
-  font-size: 15px;
-  top: 5px;
-  right: 0;
-}
-@media (max-width: 450px) {
-  .top-card__price::after {
-    font-size: 11px;
   }
 }
 
@@ -4878,15 +4897,7 @@ h1 {
   text-decoration: line-through;
   margin-right: 20px;
 }
-@media (max-width: 450px) {
-  .top-card__price-last {
-    font-size: 14px;
-    margin-right: 0;
-  }
-}
-
-.top-card__price-last::after {
-  content: "ТГ";
+.top-card__price-last span {
   position: absolute;
   font-weight: 400;
   color: #6a6d6d;
@@ -4895,8 +4906,15 @@ h1 {
   right: 0;
 }
 @media (max-width: 450px) {
-  .top-card__price-last::after {
+  .top-card__price-last span {
     font-size: 9px;
+    top: 0;
+  }
+}
+@media (max-width: 450px) {
+  .top-card__price-last {
+    font-size: 14px;
+    margin-right: 0;
   }
 }
 
@@ -5479,7 +5497,6 @@ h1 {
 
 .top-card {
   padding: 21px 20px;
-  height: 500px;
 }
 
 .top-card__counter-block {
@@ -5900,6 +5917,7 @@ input[type=number] {
   width: 40px;
   user-select: none;
   cursor: pointer;
+  background-color: transparent;
 }
 .basket-list .price, .basket-list .total {
   font-size: 21px;
