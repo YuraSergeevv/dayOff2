@@ -65,7 +65,6 @@ $(document).ready(function () {
 
     select();
 
-
     $('.slider__inner').each(function (index) {
         $('.slider', $(this)).slick({
             slidesToShow: 1,
@@ -115,7 +114,7 @@ $(document).ready(function () {
                     settings: {
                         slidesToShow: 2,
                     }
-                },{
+                }, {
                     breakpoint: 768,
                     settings: {
                         slidesToShow: 1,
@@ -164,9 +163,11 @@ $(document).ready(function () {
                         slidesToShow: 1,
                     }
 
-            }]
+                }]
         })
     });
+
+    $('.new-slider-wrap').each(function (index) {
 
         $('.new-slider').slick({
             slidesToShow: 3,
@@ -188,6 +189,18 @@ $(document).ready(function () {
                 }]
         });
 
+    });
+
+
+    $('.drinks-slider__inner-MB').each(function (index) {
+        $('.drinks-slider-MB', $(this)).slick(
+            {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                arrows: true,
+                swipeToSlide: true,
+            })
+    });
 
 
     $('.top-card__icon').click(function (elem) {
@@ -226,10 +239,10 @@ $(document).ready(function () {
         $(this).val() ? $(this).parent().addClass('active') : $(this).parent().removeClass('active');
     }).each(function () {
         $(this).val() ? $(this).parent().addClass('active') : $(this).parent().removeClass('active');
-        if($(this).attr("placeholder") && $(this).attr("placeholder").indexOf('*') != -1){
+        if ($(this).attr("placeholder") && $(this).attr("placeholder").indexOf('*') != -1) {
             var placeholder = $(this).attr("placeholder");
             $(this).next(".placeholder").text(placeholder);
         }
     });
 });
-$('.top__input-phone').mask('(000)000-00-00');  
+$('.top__input-phone').mask('(000)000-00-00');
