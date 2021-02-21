@@ -78,8 +78,12 @@
 
 <div class="container">
     <div class="catalog-row">
-        <div class="column">
+        <div class="column filter-column">
             <div class="filter">
+                <div class="close-filter close-popup"></div>
+                <div class="submit-trigger">
+                    72 показать
+                </div>
                 <div class="search-field">
                     <div class="validation-field">
                         <input type="text">
@@ -124,6 +128,17 @@
                             <span class="checkbox"></span>
                             <span class="value">Красное вино</span>
                         </label>
+                    </div>
+                </div>
+                <div class="prop-group">
+                    <div class="prop-title">Стоимость</div>
+                    <div class="prop-list">
+                        <div id="filter-price"></div>
+                        <div class="price-inputs">
+                            <input type="text" name="min">
+                            <span>-</span>
+                            <input type="text" name="max">
+                        </div>
                     </div>
                 </div>
                 <div class="prop-group">
@@ -254,8 +269,34 @@
             </div>
         </div>
         <div class="column">
+            <div class="mob-filter">
+                <div class="filter-show filter-button">Фильтр</div>
+            </div>
             <div class="filter-row">
-
+                <div class="filter-left">
+                    <div class="sort-wrap">
+                        <div class="title">
+                            Сортировать по:
+                        </div>
+                        <select class="filter-select">
+                            <option value="">По популярности</option>
+                            <option value="">По рейтингу</option>
+                            <option value="">По дате</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="filter-right">
+                    <div class="sort-wrap">
+                        <div class="title">
+                            Показывать на странице:
+                        </div>
+                        <select class="filter-select">
+                            <option value="">12</option>
+                            <option value="">24</option>
+                            <option value="">36</option>
+                        </select>
+                    </div>
+                </div>
             </div>
             <div class="catalog-grid">
                 <div class="top-slider__item">
@@ -282,8 +323,8 @@
                                         <input type="number" class="input-number quantity-num" value="1" min="1"
                                                max="30000">
                                         <div class="wrapper-arrows">
-                                            <button class="quantity-arrow-plus arrows"> + </button>
-                                            <button class="quantity-arrow-minus arrows"> - </button>
+                                            <button class="quantity-arrow-plus arrows"> +</button>
+                                            <button class="quantity-arrow-minus arrows"> -</button>
                                         </div>
                                     </div>
                                     <a href="#" class="top-card__basket"></a>
@@ -316,8 +357,8 @@
                                         <input type="number" class="input-number quantity-num" value="1" min="1"
                                                max="30000">
                                         <div class="wrapper-arrows">
-                                            <button class="quantity-arrow-plus arrows"> + </button>
-                                            <button class="quantity-arrow-minus arrows"> - </button>
+                                            <button class="quantity-arrow-plus arrows"> +</button>
+                                            <button class="quantity-arrow-minus arrows"> -</button>
                                         </div>
                                     </div>
                                     <a href="#" class="top-card__basket"></a>
@@ -350,8 +391,8 @@
                                         <input type="number" class="input-number quantity-num" value="1" min="1"
                                                max="30000">
                                         <div class="wrapper-arrows">
-                                            <button class="quantity-arrow-plus arrows"> + </button>
-                                            <button class="quantity-arrow-minus arrows"> - </button>
+                                            <button class="quantity-arrow-plus arrows"> +</button>
+                                            <button class="quantity-arrow-minus arrows"> -</button>
                                         </div>
                                     </div>
                                     <a href="#" class="top-card__basket"></a>
@@ -384,8 +425,8 @@
                                         <input type="number" class="input-number quantity-num" value="1" min="1"
                                                max="30000">
                                         <div class="wrapper-arrows">
-                                            <button class="quantity-arrow-plus arrows"> + </button>
-                                            <button class="quantity-arrow-minus arrows"> - </button>
+                                            <button class="quantity-arrow-plus arrows"> +</button>
+                                            <button class="quantity-arrow-minus arrows"> -</button>
                                         </div>
                                     </div>
                                     <a href="#" class="top-card__basket"></a>
@@ -418,8 +459,8 @@
                                         <input type="number" class="input-number quantity-num" value="1" min="1"
                                                max="30000">
                                         <div class="wrapper-arrows">
-                                            <button class="quantity-arrow-plus arrows"> + </button>
-                                            <button class="quantity-arrow-minus arrows"> - </button>
+                                            <button class="quantity-arrow-plus arrows"> +</button>
+                                            <button class="quantity-arrow-minus arrows"> -</button>
                                         </div>
                                     </div>
                                     <a href="#" class="top-card__basket"></a>
@@ -452,8 +493,8 @@
                                         <input type="number" class="input-number quantity-num" value="1" min="1"
                                                max="30000">
                                         <div class="wrapper-arrows">
-                                            <button class="quantity-arrow-plus arrows"> + </button>
-                                            <button class="quantity-arrow-minus arrows"> - </button>
+                                            <button class="quantity-arrow-plus arrows"> +</button>
+                                            <button class="quantity-arrow-minus arrows"> -</button>
                                         </div>
                                     </div>
                                     <a href="#" class="top-card__basket"></a>
@@ -461,6 +502,27 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="pagination-wrap">
+                <div class="pagination">
+                    <div class="pagination-text">Показано  1-12 из 7213</div>
+                    <div class="pagination-item active">
+                        <a href="#">1</a>
+                    </div>
+                    <div class="pagination-item">
+                        <a href="#">2</a>
+                    </div>
+                    <div class="pagination-item">
+                        <a href="#">3</a>
+                    </div>
+                    <div class="pagination-item">
+                        <a href="#">...</a>
+                    </div>
+                    <div class="pagination-item">
+                        <a href="#">401</a>
+                    </div>
+                    <div class="pagination-text last">  Стр.</div>
                 </div>
             </div>
         </div>
@@ -470,59 +532,59 @@
 <footer class="footer">
     <div class="container">
         <div class="footer__inner">
-            <div class="footer__left">
-                <span class="footer__column-title">Продукция</span>
-                <div class="footer__column">
-                    <ul class="footer__column-list">
-                        <li class="footer__column-item link-decoration"><a href="#" class="footer__column-link link-line">Водка</a></li>
-                        <li class="footer__column-item link-decoration"><a href="#" class="footer__column-link link-line">Шампанское и игристые вина</a></li>
-                        <li class="footer__column-item link-decoration"><a href="#" class="footer__column-link link-line">Ликеры</a></li>
-                        <li class="footer__column-item link-decoration"><a href="#" class="footer__column-link link-line">Бальзамы</a></li>
-                        <li class="footer__column-item link-decoration"><a href="#" class="footer__column-link link-line">Настойки</a></li>
-                        <li class="footer__column-item link-decoration"><a href="#" class="footer__column-link link-line">Коньяки</a></li>
-                        <li class="footer__column-item link-decoration"><a href="#" class="footer__column-link link-line">Бренди</a></li>
-
-                    </ul>
-                    <ul class="footer__column-list">
-                        <li class="footer__column-item link-decoration"><a href="#" class="footer__column-link link-line">Виски</a></li>
-                        <li class="footer__column-item link-decoration"><a href="#" class="footer__column-link link-line">Абсент</a></li>
-                        <li class="footer__column-item link-decoration"><a href="#" class="footer__column-link link-line">Аперитив</a></li>
-                        <li class="footer__column-item link-decoration"><a href="#" class="footer__column-link link-line">Арманьяк</a></li>
-                        <li class="footer__column-item link-decoration"><a href="#" class="footer__column-link link-line">Ром</a></li>
-                        <li class="footer__column-item link-decoration"><a href="#" class="footer__column-link link-line">Джин</a></li>
-                        <li class="footer__column-item link-decoration"><a href="#" class="footer__column-link link-line">Текила</a></li>
-                    </ul>
-                    <ul class="footer__column-list">
-                        <li class="footer__column-item link-decoration"><a href="#" class="footer__column-link link-line">Граппа</a></li>
-                        <li class="footer__column-item link-decoration"><a href="#" class="footer__column-link link-line">Чача</a></li>
-                        <li class="footer__column-item link-decoration"><a href="#" class="footer__column-link link-line">Вина</a></li>
-                        <li class="footer__column-item link-decoration"><a href="#" class="footer__column-link link-line">Вермуты</a></li>
-                        <li class="footer__column-item link-decoration"><a href="#" class="footer__column-link link-line">Пиво</a></li>
-                        <li class="footer__column-item link-decoration"><a href="#" class="footer__column-link link-line">Разливное пиво</a></li>
-                        <li class="footer__column-item link-decoration"><a href="#" class="footer__column-link link-line">Безалкоголная продукция</a></li>
-                    </ul>
+            <div class="footer__column">
+                <p class="footer__column-title">Продукция</p>
+                <div class="footer__column-list">
+                    <a href="#" class="footer__column-link link-decoration ">Водка</a>
+                    <a href="#" class="footer__column-link link-decoration">Шампанское и игристые вина</a>
+                    <a href="#" class="footer__column-link link-decoration">Ликеры</a>
+                    <a href="#" class="footer__column-link link-decoration">Бальзамы</a>
+                    <a href="#" class="footer__column-link link-decoration">Настойки</a>
+                    <a href="#" class="footer__column-link link-decoration">Коньяки</a>
+                    <a href="#" class="footer__column-link link-decoration">Бренди</a>
                 </div>
             </div>
-            <div class="footer__right">
-                <span class="footer__column-title">Покупателям</span>
-                <div class="footer__column-last footer__column">
-                    <ul class="footer__column-list-last">
-                        <li class="footer__column-item link-decoration"><a href="#" class="footer__column-link link-line">О нас</a></li>
-                        <li class="footer__column-item link-decoration"><a href="#" class="footer__column-link link-line">Как сделать заказ</a></li>
-                        <li class="footer__column-item link-decoration"><a href="#" class="footer__column-link link-line">Юредическая информация</a></li>
-                        <li class="footer__column-item link-decoration"><a href="#" class="footer__column-link link-line">Обратная связь</a></li>
-                        <li class="footer__column-item link-decoration"><a href="#" class="footer__column-link link-line">Карта сайта</a></li>
-                        <span class="footer__column-title app__title">Мобильное приложение</span>
-                        <ul class="footer__app">
-                            <li class="footer__column-item-app"> <a href="#" class="footer__column-link arrow-none"><img
-                                    src="images/footer/app-android.png" alt=""></a></li>
-                            <li class="footer__column-item-app" ><a href="#" class="footer__column-link arrow-none"><img
-                                    src="images/footer/app-ios.png" alt=""></a></li>
-                        </ul>
-                        <li class="footer__column-item"> <a href=" tel:77053309933" class="footer__column-link  phone">7-705-33-099-33</a></li>
-                    </ul>
-
+            <div class="footer__column">
+                <div class="footer__column-list">
+                    <a href="#" class="footer__column-link link-decoration">Виски</a>
+                    <a href="#" class="footer__column-link link-decoration">Абсент</a>
+                    <a href="#" class="footer__column-link link-decoration">Аперитив </a>
+                    <a href="#" class="footer__column-link link-decoration">Арманьяк</a>
+                    <a href="#" class="footer__column-link link-decoration">Ром</a>
+                    <a href="#" class="footer__column-link link-decoration">Джин </a>
+                    <a href="#" class="footer__column-link link-decoration">Текила</a>
                 </div>
+            </div>
+            <div class="footer__column">
+                <div class="footer__column-list">
+                    <a href="#" class="footer__column-link link-decoration">Граппа</a>
+                    <a href="#" class="footer__column-link link-decoration">Чача</a>
+                    <a href="#" class="footer__column-link link-decoration">Вина</a>
+                    <a href="#" class="footer__column-link link-decoration">Вермуты</a>
+                    <a href="#" class="footer__column-link link-decoration">Пиво</a>
+                    <a href="#" class="footer__column-link link-decoration">Разливное пиво</a>
+                    <a href="#" class="footer__column-link link-decoration">Безалкоголная продукция</a>
+                </div>
+            </div>
+
+            <div class="footer__column">
+                <p class="footer__column-title">Покупателям</p>
+                <div class="footer__column-list">
+                    <a href="#" class="footer__column-link link-decoration footer__column-last">О нас</a>
+                    <a href="#" class="footer__column-link link-decoration footer__column-last">Как сделать заказ</a>
+                    <a href="#" class="footer__column-link link-decoration footer__column-last">Юредическая
+                        информация</a>
+                    <a href="#" class="footer__column-link link-decoration footer__column-last">Обратная связь</a>
+                    <a href="#" class="footer__column-link link-decoration footer__column-last">Карта сайта</a>
+                    <p class="footer__column-title app__title">Мобильное приложение</p>
+                    <div class="footer__app">
+                        <a href="#" class="footer__column-link link-decoration arrow-none"><img
+                                src="images/footer__android.png" alt=""></a>
+                        <a href="#" class="footer__column-link link-decoration arrow-none"><img
+                                src="images/footer__ios.png" alt=""></a>
+                    </div>
+                </div>
+                <a href="tel:77053309933" class="footer__column-link link-decoration  phone">7-705-33-099-33</a>
             </div>
         </div>
         <div class="footer__social">
@@ -533,43 +595,7 @@
             </div>
             <p class="mark__block">@ 2021 Alcohol shop</p>
         </div>
-
-        <div class="footer__inner-mb">
-            <div class="footer__right">
-                <span class="footer__column-title">Покупателям</span>
-                <div class="footer__column-last footer__column">
-                    <ul class="footer__column-list-last">
-                        <li class="footer__column-item link-decoration"><a href="#" class="footer__column-link  link-line">О нас</a></li>
-                        <li class="footer__column-item link-decoration"><a href="#" class="footer__column-link link-line">Как сделать заказ</a></li>
-                        <li class="footer__column-item link-decoration"><a href="#" class="footer__column-link link-line">Юредическая информация</a></li>
-                        <li class="footer__column-item link-decoration"><a href="#" class="footer__column-link link-line">Обратная связь</a></li>
-                        <li class="footer__column-item link-decoration"><a href="#" class="footer__column-link link-line">Карта сайта</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="app-social__block">
-                <div class="app__block">
-                    <span class="footer__column-title app__title">Мобильное приложение</span>
-                    <ul class="footer__app">
-                        <li class="footer__column-item-app android"> <a href="#" class="footer__column-link arrow-none"><img
-                                src="images/footer/app-android.png" alt=""></a></li>
-                        <li class="footer__column-item-app ios" ><a href="#" class="footer__column-link arrow-none"><img
-                                src="images/footer/app-ios.png" alt=""></a></li>
-                    </ul>
-                </div>
-                <div class="footer__social-mb">
-                    <p class="social__subtitel">Мы в социальныйх сетях:</p>
-                    <div class="social__block">
-                        <a href="#" class="social__facebook"></a>
-                        <a href="#" class="social__instagram"></a>
-                    </div>
-
-                </div>
-            </div>
-
-            <a href="tel:77053309933" class="footer__column-link   phone">7-705-33-099-33</a>
-            <p class="mark__block">@ 2021 Alcohol shop</p>
-        </div>
+    </div>
     </div>
 </footer>
 
@@ -577,7 +603,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 <script src="js/slick.min.js"></script>
+<script src="js/select2.full.min.js"></script>
 <script src="js/jquery.fancybox3.min.js"></script>
+<script src="js/popup-slide.js"></script>
+<script src="js/nouislider_fixed_bugs.js"></script>
 <script src="js/main.js"></script>
 </body>
 

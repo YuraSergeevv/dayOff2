@@ -20,12 +20,15 @@ body{padding: 0;}
 //@import "libs/popup-slide";
 @import "libs/fancybox3";
 //@import "libs/slick-theme";
-//@import "libs/select2";
+@import "libs/select2";
+@import "libs/nouislider";
 //@import "libs/scrollbar";
-//@import "libs/popup-slide";
+@import "libs/popup-slide";
 
 //components
 //@import "components/to-top";
+@import "components/pagination";
+@import "components/object-fit";
 
 //widgets
 //@import "widgets/pagination";
@@ -35,6 +38,7 @@ body{padding: 0;}
 //layouts
 //@import "layouts/header";
 @import "layouts/old";
+@import "layouts/basket";
 @import "layouts/catalog-page";
 @import "layouts/new-catalog-slider";
 //@import "layouts/footer";

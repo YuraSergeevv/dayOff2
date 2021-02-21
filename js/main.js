@@ -18,6 +18,63 @@ $(document).ready(function () {
         }
     })
 
+    $('.filter-column').PopupSlider({
+        effect: 'fade',
+        button: '.filter-show',
+        closeButton: '.filter-close',
+        container: 'body',
+        breakpoint: 1024,
+        onMenuOpen: false,
+        onMenuClose: false
+    });
+
+    $('.filter-select').select2({
+        minimumResultsForSearch: -1
+    });
+
+    $('.prop-list .prop input').on('change', function () {
+        let position = $(this).parent().position();
+        let trigger = $('.submit-trigger');
+        trigger.css('top', position.top - 10);
+        trigger.css('left', position.left + $(this).parent().innerWidth());
+        trigger.show();
+    })
+
+    var slider = document.getElementById('filter-price');
+    var min = $(this).find('[name^=min]');
+    var max = $(this).find('[name^=max]');
+
+    if(slider){
+        noUiSlider.create(slider, {
+            start: [100, 2500],
+            connect: !0,
+            range: {
+                'min': 100,
+                'max': 2500
+            }
+        });
+
+        slider.noUiSlider.on('update', function (values, handle) {
+            var value = values[handle];
+            if (handle) {
+                $(max).val(parseInt(value));
+            } else {
+                $(min).val(parseInt(value));
+            }
+        });
+
+        slider.noUiSlider.on('change', function (values, handle) {
+            $(min).change();
+        });
+        $(min).on('change', function () {
+            slider.noUiSlider.set([this.value, null])
+        });
+        $(max).on('change', function () {
+            slider.noUiSlider.set([null, this.value])
+        });
+
+    }
+
     $('.more').on('click touchend', function () {
         $(this).toggleClass('active')
         $('.description').slideToggle();
@@ -31,6 +88,10 @@ $(document).ready(function () {
     $('.top-card__icon').on('click touchend', function () {
         $(this).toggleClass('like__black')
         $('.description').slideToggle();
+        return false;
+    })
+    $('.basket-list .remove').on('click touchend', function () {
+        $(this).parent().remove();
         return false;
     })
 

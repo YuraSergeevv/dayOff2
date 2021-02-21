@@ -48,9 +48,39 @@
   .column{
     &:first-of-type{
       width: 25%;
+      @include breakpoint(sm-down){
+        width: 100%;
+        display: none;
+        &.popup-slider{
+          display: block;
+          left: 0;
+          top: 0;
+          width: 100%;
+          min-height: 100vh;
+          max-height: 100vh;
+          overflow-y: auto;
+        }
+      }
     }
     &:last-of-type{
       width: 75%;
+      @include breakpoint(sm-down){
+        width: 100%;
+      }
+    }
+  }
+}
+
+.mob-filter{
+  display: none;
+  @include breakpoint(sm-down){
+    @include flexbox;
+    @include justify-content(center);
+  }
+  .filter-button{
+    padding: 20px 50px;
+    &:before{
+      content: initial;
     }
   }
 }
@@ -63,12 +93,93 @@
     width: calc(33.33% - 30px);
     margin: 0 15px 30px 15px;
     background-color: #ededed;
+    @include breakpoint(xs){
+      width: calc(50% - 10px);
+      margin: 0 5px 10px 5px;
+      .top-card{
+        padding: 10px;
+        height: initial;
+      }
+      .top-card__price-block{
+        @include flex-direction(column);
+        @include align-items(center);
+      }
+      .top-card__price-last{
+        margin-right: 0;
+      }
+      .top-card__title{
+        font-size: 16px;
+      }
+    }
   }
 }
 
 .filter{
   background-color: #181818;
   margin-right: 30px;
+  position: relative;
+  .close-filter{
+    display: none;
+  }
+  @include breakpoint(sm-down){
+    margin-right: 0;
+    min-height: 100vh;
+    padding-top: 70px;
+    .close-filter{
+      cursor: pointer;
+      position: absolute;
+      right: 15px;
+      display: block;
+      top: 15px;
+      width: 40px;
+      height: 40px;
+      &:after,
+      &:before{
+        position: absolute;
+        content: '';
+        background-color: #ffffff;
+        border-radius: 3px;
+      }
+      &:after{
+        width: 2px;
+        height: 100%;
+        left: calc(50% - 1px);
+      }
+      &:before{
+        height: 2px;
+        width: 100%;
+        top: calc(50% - 1px);
+      }
+    }
+  }
+  .submit-trigger{
+    position: absolute;
+    white-space: nowrap;
+    display: none;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    padding: 10px 20px;
+    background-color: #ffd800;
+    color: #181818;
+    border: 1px solid #181818;
+    font-size: 14px;
+    font-weight: 600;
+    @include breakpoint(sm-down){
+      display: none !important;
+    }
+    &:after{
+      content: '';
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 5px 5px 5px 0;
+      position: absolute;
+      right: 100%;
+      top: 39%;
+      border-color: transparent #ffd800 transparent transparent;
+    }
+  }
   .search-field{
     padding: 20px;
     border-bottom: 1px solid #303030;
@@ -79,6 +190,25 @@
       width: 100%;
       padding-left: 20px;
     }
+  }
+}
+
+.price-inputs{
+  @include flexbox;
+  @include align-items(center);
+  @include justify-content(space-between);
+  span{
+    font-size: 14px;
+    color: #ffffff;
+  }
+  input{
+    width: 44%;
+    background-color: transparent;
+    border: 1px solid #ffd800;
+    height: 55px;
+    padding: 10px;
+    text-align: center;
+    color: #ffffff;
   }
 }
 
@@ -110,6 +240,8 @@
 }
 
 .prop-group{
+  background-color: #181818;
+
   &.active{
     .prop-title{
       color: #ffd800;
@@ -191,4 +323,28 @@
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 25px;
+}
+
+.filter-row{
+  margin-bottom: 25px;
+  padding-top: 25px;
+  @include flexbox;
+  @include align-items(center);
+  @include justify-content(space-between);
+  @include breakpoint(xs){
+    @include flex-direction(column);
+  }
+  .filter-left,.filter-right,.sort-wrap{
+    @include flexbox;
+    @include align-items(center);
+  }
+  .filter-left{
+    @include breakpoint(xs){
+      margin-bottom: 10px;
+    }
+  }
+  .title{
+    white-space: nowrap;
+    margin-right: 13px;
+  }
 }
