@@ -207,6 +207,22 @@ $(document).ready(function () {
                 }]
             })
     });
+    $('.top-slider__inner-MB').each(function (index) {
+        $('.top-slider-MB', $(this)).slick({
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            arrows: true,
+            responsive: [
+                {
+                    breakpoint: 1025,
+                    settings: {
+                        slidesToShow: 2,
+                        vertical: true,
+                    }
+                }
+            ]
+        })
+    });
 
 
     $('.top-card__icon').click(function (elem) {
