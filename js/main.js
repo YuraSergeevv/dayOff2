@@ -253,6 +253,12 @@ $(document).ready(function () {
                 slidesToScroll: 1,
                 arrows: true,
                 swipeToSlide: true,
+                responsive: [{
+                    breakpoint: 400,
+                    settings: {
+                        slidesToShow: 1,
+                    }
+                }]
             })
     });
 

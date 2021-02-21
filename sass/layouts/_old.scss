@@ -670,7 +670,7 @@ h1 {
   position: absolute;
   top: -200%;
   left: 0;
-  z-index: 2;
+  z-index: 4;
   width: 100%;
   padding: 75px 0 55px;
   display: block;
@@ -847,7 +847,13 @@ h1 {
   text-transform: uppercase;
   color: #ffd800;
 }
-
+.header__elements-block{
+  @include breakpoint(smxs){
+    position: relative;
+  }
+}
+.header__elements{
+}
 .header__elements-name {
   font-family: MyriadSetPro;
   position: absolute;
@@ -865,6 +871,7 @@ h1 {
   color: #080909;
   z-index: 3;
   transition: all 0.4s;
+
 }
 
 .header__elements-name-on {
@@ -872,8 +879,7 @@ h1 {
   overflow: visible;
   @include breakpoint(smxs){
     top: 65px;
-    letter-spacing: 2px;
-   transform: translate(-50%);
+    letter-spacing: initial;
   }
 }
 
@@ -934,7 +940,26 @@ h1 {
 .drinks__element .element__count {
   margin-top: 10px;
 }
-
+.drinks-slider__inner-MB{
+  display: none;
+  margin: 0 20px;
+  @include breakpoint(smxs){
+    display: block;
+  }
+  .drinks-slider__item{
+  }
+  .slick-prev{
+    right: 100%;
+  }
+  .slick-next{
+    left: 100%;
+  }
+  .drinks__element{
+    margin: 0;
+    margin-top: 20px;
+    max-width: initial;
+  }
+}
 .search__inner {
   display: flex;
   align-items: baseline;
@@ -1156,7 +1181,13 @@ h1 {
   {
     font-size: 17px;
   }
-
+}
+.tel{
+  @include breakpoint(sxs) {
+    display: block;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
 }
 .tel__block span {
   margin-left: 50px;
@@ -1305,7 +1336,7 @@ h1 {
 }
 
 .favorites-slider__inner{
-  margin: 20px;
+  margin: 0 20px;
 }
 .favorites-slider__item {
   margin: 0 25px;
@@ -1319,9 +1350,24 @@ h1 {
   height: 180px;
 
 }
+.favorites-slider__item .new-card{
+  @include breakpoint(smxs) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.favorites-slider__item .new-card__block{
+  @include breakpoint(smxs) {
+    padding: 10px;
+    width: 100%;
+  }
+
+}
 .favorites-slider__item .new-card__img img {
   width: 100%;
   height: 100%;
+
 }
 .favorites-slider__item .new-card__subtitle {
   font-size: 16px;
@@ -1390,6 +1436,9 @@ h1 {
   color: #ffffff;
   @include  breakpoint(xs){
     font-size: 16px;
+  }
+  @include  breakpoint(smxs){
+    font-size: 14px;
   }
 }
 
@@ -1835,32 +1884,15 @@ h1 {
   position: relative;
 }
 
-.new__title {
-  text-align: center;
-  display: inline-block;
-  margin: 50px 0;
-  padding: 0px 32px 0;
-  font-size: 21px;
-  line-height: 1.2;
+.new-title-wrap {
+  font-family: MyriadSetPro;
+  padding-top: 50px;
+  padding-bottom: 20px;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.4em;
-  color: #080909;
   background-color: #ededed;
-  position: relative;
-  z-index: 3;
-  left: 50%;
-  transform: translate(-50%);
-}
-
-.new__line {
-  width: 100%;
-  height: 2px;
-  background-color: #080909;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  z-index: 2;
+  .section-title:after{
+    background: #181818;
+  }
 }
 
 .new-slider__item {
@@ -2151,32 +2183,18 @@ h1 {
   position: relative;
 }
 
-.top__title {
-  text-align: center;
-  display: inline-block;
-  margin: 50px 0;
-  padding: 0px 32px 0;
-  font-size: 21px;
-  line-height: 1.2;
+.top-title-wrap {
+  font-family: MyriadSetPro;
+  padding-top: 50px;
+  padding-bottom: 20px;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.4em;
-  color: #080909;
   background-color: #ffd800;
-  position: relative;
-  z-index: 3;
-  left: 50%;
-  transform: translate(-50%);
-}
-
-.top__line {
-  width: 100%;
-  height: 2px;
-  background-color: #080909;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  z-index: 2;
+  .section-title span{
+    background-color: #ffd800;
+  }
+  .section-title:after{
+    background: #181818;
+  }
 }
 
 .top-slider__item {
@@ -2275,6 +2293,10 @@ h1 {
   @include breakpoint(md-down)
   {
     font-size: 20px;
+  }
+  @include breakpoint(sxs)
+  {
+    font-size: 16px;
   }
 }
 
@@ -2659,6 +2681,9 @@ h1 {
     margin: 0;
     flex-wrap: wrap;
     padding-top: 16px;
+    @include breakpoint(sxs){
+      flex-direction: column;
+    }
   }
   .footer__column-item{
     width: 50%;
@@ -2675,9 +2700,15 @@ h1 {
     margin-top: 60px;
     display: flex;
     justify-content: space-between;
+    @include breakpoint(sxs){
+      flex-direction: column;
+    }
   }
   .footer__app{
     flex-direction: row;
+    @include breakpoint(smxs){
+      flex-direction: column;
+    }
   }
   .footer__column-item-app{
 
@@ -2689,10 +2720,15 @@ h1 {
   }
   .footer__social-mb{
     width: 50%;
+
   }
   .social__subtitel{
     width: max-content;
     margin: 0 auto;
+    @include breakpoint(sxs){
+     margin: 0;
+      margin-top: 15px;
+    }
   }
   .social__block {
    padding-top: 20px;
