@@ -20,12 +20,14 @@ body{padding: 0;}
 //@import "libs/popup-slide";
 @import "libs/fancybox3";
 //@import "libs/slick-theme";
-//@import "libs/select2";
+@import "libs/select2";
+@import "libs/nouislider";
 //@import "libs/scrollbar";
-//@import "libs/popup-slide";
+@import "libs/popup-slide";
 
 //components
 //@import "components/to-top";
+@import "components/pagination";
 
 //widgets
 //@import "widgets/pagination";

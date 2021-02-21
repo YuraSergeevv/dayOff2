@@ -78,8 +78,12 @@
 
 <div class="container">
     <div class="catalog-row">
-        <div class="column">
+        <div class="column filter-column">
             <div class="filter">
+                <div class="close-filter close-popup"></div>
+                <div class="submit-trigger">
+                    72 показать
+                </div>
                 <div class="search-field">
                     <div class="validation-field">
                         <input type="text">
@@ -124,6 +128,17 @@
                             <span class="checkbox"></span>
                             <span class="value">Красное вино</span>
                         </label>
+                    </div>
+                </div>
+                <div class="prop-group">
+                    <div class="prop-title">Стоимость</div>
+                    <div class="prop-list">
+                        <div id="filter-price"></div>
+                        <div class="price-inputs">
+                            <input type="text" name="min">
+                            <span>-</span>
+                            <input type="text" name="max">
+                        </div>
                     </div>
                 </div>
                 <div class="prop-group">
@@ -254,8 +269,34 @@
             </div>
         </div>
         <div class="column">
+            <div class="mob-filter">
+                <div class="filter-show filter-button">Фильтр</div>
+            </div>
             <div class="filter-row">
-
+                <div class="filter-left">
+                    <div class="sort-wrap">
+                        <div class="title">
+                            Сортировать по:
+                        </div>
+                        <select class="filter-select">
+                            <option value="">По популярности</option>
+                            <option value="">По рейтингу</option>
+                            <option value="">По дате</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="filter-right">
+                    <div class="sort-wrap">
+                        <div class="title">
+                            Показывать на странице:
+                        </div>
+                        <select class="filter-select">
+                            <option value="">12</option>
+                            <option value="">24</option>
+                            <option value="">36</option>
+                        </select>
+                    </div>
+                </div>
             </div>
             <div class="catalog-grid">
                 <div class="top-slider__item">
@@ -282,8 +323,8 @@
                                         <input type="number" class="input-number quantity-num" value="1" min="1"
                                                max="30000">
                                         <div class="wrapper-arrows">
-                                            <button class="quantity-arrow-plus arrows"> + </button>
-                                            <button class="quantity-arrow-minus arrows"> - </button>
+                                            <button class="quantity-arrow-plus arrows"> +</button>
+                                            <button class="quantity-arrow-minus arrows"> -</button>
                                         </div>
                                     </div>
                                     <a href="#" class="top-card__basket"></a>
@@ -316,8 +357,8 @@
                                         <input type="number" class="input-number quantity-num" value="1" min="1"
                                                max="30000">
                                         <div class="wrapper-arrows">
-                                            <button class="quantity-arrow-plus arrows"> + </button>
-                                            <button class="quantity-arrow-minus arrows"> - </button>
+                                            <button class="quantity-arrow-plus arrows"> +</button>
+                                            <button class="quantity-arrow-minus arrows"> -</button>
                                         </div>
                                     </div>
                                     <a href="#" class="top-card__basket"></a>
@@ -350,8 +391,8 @@
                                         <input type="number" class="input-number quantity-num" value="1" min="1"
                                                max="30000">
                                         <div class="wrapper-arrows">
-                                            <button class="quantity-arrow-plus arrows"> + </button>
-                                            <button class="quantity-arrow-minus arrows"> - </button>
+                                            <button class="quantity-arrow-plus arrows"> +</button>
+                                            <button class="quantity-arrow-minus arrows"> -</button>
                                         </div>
                                     </div>
                                     <a href="#" class="top-card__basket"></a>
@@ -384,8 +425,8 @@
                                         <input type="number" class="input-number quantity-num" value="1" min="1"
                                                max="30000">
                                         <div class="wrapper-arrows">
-                                            <button class="quantity-arrow-plus arrows"> + </button>
-                                            <button class="quantity-arrow-minus arrows"> - </button>
+                                            <button class="quantity-arrow-plus arrows"> +</button>
+                                            <button class="quantity-arrow-minus arrows"> -</button>
                                         </div>
                                     </div>
                                     <a href="#" class="top-card__basket"></a>
@@ -418,8 +459,8 @@
                                         <input type="number" class="input-number quantity-num" value="1" min="1"
                                                max="30000">
                                         <div class="wrapper-arrows">
-                                            <button class="quantity-arrow-plus arrows"> + </button>
-                                            <button class="quantity-arrow-minus arrows"> - </button>
+                                            <button class="quantity-arrow-plus arrows"> +</button>
+                                            <button class="quantity-arrow-minus arrows"> -</button>
                                         </div>
                                     </div>
                                     <a href="#" class="top-card__basket"></a>
@@ -452,8 +493,8 @@
                                         <input type="number" class="input-number quantity-num" value="1" min="1"
                                                max="30000">
                                         <div class="wrapper-arrows">
-                                            <button class="quantity-arrow-plus arrows"> + </button>
-                                            <button class="quantity-arrow-minus arrows"> - </button>
+                                            <button class="quantity-arrow-plus arrows"> +</button>
+                                            <button class="quantity-arrow-minus arrows"> -</button>
                                         </div>
                                     </div>
                                     <a href="#" class="top-card__basket"></a>
@@ -461,6 +502,27 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="pagination-wrap">
+                <div class="pagination">
+                    <div class="pagination-text">Показано  1-12 из 7213</div>
+                    <div class="pagination-item active">
+                        <a href="#">1</a>
+                    </div>
+                    <div class="pagination-item">
+                        <a href="#">2</a>
+                    </div>
+                    <div class="pagination-item">
+                        <a href="#">3</a>
+                    </div>
+                    <div class="pagination-item">
+                        <a href="#">...</a>
+                    </div>
+                    <div class="pagination-item">
+                        <a href="#">401</a>
+                    </div>
+                    <div class="pagination-text last">  Стр.</div>
                 </div>
             </div>
         </div>
@@ -541,7 +603,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 <script src="js/slick.min.js"></script>
+<script src="js/select2.full.min.js"></script>
 <script src="js/jquery.fancybox3.min.js"></script>
+<script src="js/popup-slide.js"></script>
+<script src="js/nouislider_fixed_bugs.js"></script>
 <script src="js/main.js"></script>
 </body>
 

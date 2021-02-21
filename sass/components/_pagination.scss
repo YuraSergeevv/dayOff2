@@ -1,0 +1,51 @@
+.pagination-wrap{
+  @include flexbox;
+  @include align-items(center);
+  @include justify-content(center);
+  margin-bottom: 30px;
+}
+
+.pagination{
+  @include flexbox;
+  @include align-items(center);
+  @include justify-content(center);
+  @include breakpoint(mxs){
+    @include flex-wrap(wrap);
+  }
+}
+
+.pagination-text{
+  font-size: 14px;
+  margin-right: 20px;
+  @include breakpoint(mxs){
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 5px;
+    text-align: center;
+  }
+  &.last{
+    margin-right: 0;
+    margin-left: 20px;
+    @include breakpoint(mxs){
+      display: none;
+    }
+  }
+}
+
+.pagination-item{
+  margin: 0 5px;
+  &.active{
+    background-color: #181818;
+    a{
+      width: 60px;
+      height: 60px;
+      @include flexbox;
+      @include align-items(center);
+      @include justify-content(center);
+      color: #ffffff;
+    }
+  }
+  a{
+    color: #181818;
+  }
+}
