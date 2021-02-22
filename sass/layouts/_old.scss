@@ -140,11 +140,11 @@
   align-items: center;
   margin-bottom: 0;
   margin-left: 0;
+  flex-wrap: wrap;
   @include breakpoint(sm-down){
     a,span{
       white-space: nowrap;
     }
-    overflow-x: auto;
   }
 }
 .breadcrumbs li {
@@ -319,6 +319,10 @@
   position: relative;
   white-space: nowrap;
   margin-right: -60px;
+  @include breakpoint(    smxs){
+    margin-right: -20px;
+    padding-right: 20px;
+  }
 }
 .more-wrap .more.active:after {
   transform: rotate(-180deg);
@@ -344,6 +348,7 @@
   display: none;
   font-family: MyriadSetPro;
   font-size: 16px;
+  margin: 0 20px;
 }
 
 h1 {
@@ -509,7 +514,7 @@ h1 {
   display: -webkit-flex;
   display: flex;
 }
-.count-wrap .count {
+.count-wrap .count-block {
   width: 50%;
   display: -webkit-box;
   display: -moz-box;
@@ -529,7 +534,7 @@ h1 {
   border-top: 1px solid #181818;
   border-bottom: 1px solid #181818;
 }
-.count-wrap .count .minus, .count-wrap .count .plus, .count-wrap .count input {
+.count-wrap .count-block .minus, .count-wrap .count-block .plus, .count-wrap .count-block input {
   height: 55px;
   font-size: 21px;
   width: 33.33%;
@@ -551,7 +556,7 @@ h1 {
   text-align: center;
   background-color: transparent;
 }
-.count-wrap .count .minus, .count-wrap .count .plus {
+.count-wrap .count-block .minus, .count-wrap .count-block .plus {
   user-select: none;
   cursor: pointer;
 }
@@ -584,6 +589,17 @@ h1 {
   padding-left: 70px;
   position: relative;
   cursor: pointer;
+  &:hover{
+    transition: .4s;
+    background-color: #181818;
+    color: #ffffff;
+    &::after{
+      background-image: url("../images/card/icon/one-click_hover.png");
+    }
+    &::before{
+      border-color: transparent transparent transparent #ffffff;
+    }
+  }
 }
 .one-click-button:after {
   content: "";
@@ -1778,6 +1794,7 @@ h1 {
   @include  breakpoint(xs)
   {
     margin: 0;
+    margin-bottom: 30px;
   }
   @include breakpoint(sxs){
     flex-direction: column;
@@ -1826,7 +1843,7 @@ h1 {
   @include breakpoint(smxs){
     font-size: 15px;
   }
-  @include breakpoint(sxs){
+  @include breakpoint(sxs) {
     font-size: 12px;
   }
 }
@@ -1861,6 +1878,7 @@ h1 {
   @include breakpoint(smxs){
     font-size: 18px;
     margin-right: 5px;
+    margin-top: 5px;
   }
   @include breakpoint(sxs){
     font-size: 14px;
@@ -1902,6 +1920,7 @@ h1 {
   }
   @include breakpoint(sxs){
     padding: 10px ;
+    justify-content: center;
   }
 }
 .slider__item-sale-buy span {
@@ -1975,7 +1994,7 @@ h1 {
   @include  breakpoint(sm-down){
     .slick-prev {
       left: calc(50% - 10px);
-      top: -10px;
+      top: -20px;
       background-image: url("../images/slider/arrow.svg");
       transform: rotate(-90deg) ;
     }
@@ -1984,7 +2003,7 @@ h1 {
       background-image: url("../images/slider/arrow.svg");
       left: calc(50% - 10px);
       top: initial;
-      bottom: -10px;
+      bottom: -20px;
       transform: rotate(90deg);
     }
     @include breakpoint(sxs){
@@ -2216,7 +2235,7 @@ h1 {
   @include  breakpoint(sm-down){
     .slick-prev {
       left: calc(50% - 10px);
-      top: -10px;
+      top: -20px;
       background-image: url("../images/slider/arrow.svg");
       transform: rotate(-90deg) ;
     }
@@ -2225,7 +2244,7 @@ h1 {
       background-image: url("../images/slider/arrow.svg");
       left: calc(50% - 10px);
       top: initial;
-      bottom: -10px;
+      bottom: -20px;
       transform: rotate(90deg);
     }
   }

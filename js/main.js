@@ -91,6 +91,11 @@ $(document).ready(function () {
         $('.description').slideToggle();
         return false;
     })
+    $('.top-wish').on('click touchend', function () {
+        $(this).toggleClass('like__black')
+        $('.description').slideToggle();
+        return false;
+    })
     $('.basket-list .remove').on('click touchend', function () {
         $(this).parent().remove();
         return false;

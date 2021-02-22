@@ -217,6 +217,11 @@
 .order-button{
   background-color: #181818;
   color: #ffce00;
+  transition: 0.4s;
+}
+.order-button:hover {
+  transition: 0.4s;
+  color: #ffffff;
 }
 
 .back-button{
@@ -224,6 +229,15 @@
   position: relative;
   color: #181818;
   font-weight: 600;
+  transition: 0.4s;
+  &:hover{
+    transition:.4s;
+    color: #ffffff;
+    background-color: #181818;
+    &::after {
+      border-color: transparent #ffffff transparent transparent;
+    }
+  }
   &:after{
     content: '';
     position: absolute;
