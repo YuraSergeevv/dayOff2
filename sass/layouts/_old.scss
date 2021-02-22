@@ -2604,7 +2604,7 @@ h1 {
   margin-left: 30px;
   font-family: Montserrat;
   font-size: 85px;
-  line-height: 0.9;
+  line-height: 1.2;
   font-weight: 700;
   text-transform: uppercase;
   color: #ffffff;
@@ -2636,6 +2636,10 @@ h1 {
   {
     width: 100%;
   }
+  @include breakpoint(xs){
+    width: calc(100% + 30px);
+    margin-left: -15px;
+  }
   @include breakpoint(smxs)
   {
     padding: 40px 50px;
@@ -2644,6 +2648,7 @@ h1 {
   {
     padding: 20px 20px;
   }
+
 
 }
 
